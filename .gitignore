@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/sanity_ecommerce/node_modules
+/sanity_ecommerce/assets
 /.pnp
 .pnp.js
 
