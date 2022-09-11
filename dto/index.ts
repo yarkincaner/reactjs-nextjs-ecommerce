@@ -1,14 +1,16 @@
 export interface IProduct {
-  id: string;
+  _id: string;
   image: any;
   name: string;
-  slug: string;
+  slug: {
+    current: string;
+  };
   price: number;
   details: string;
 }
 
 export interface IBanner {
-  id: string;
+  _id: string;
   image: any;
   buttonText: string;
   product: string;

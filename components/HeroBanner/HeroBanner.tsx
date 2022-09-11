@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { IBanner } from "../../dto";
 import { urlFor } from "../../lib/client";
 
 type Props = {
-  heroBanner: any;
+  heroBanner: IBanner;
 };
 
 const HeroBanner = ({ heroBanner }: Props) => {
@@ -14,13 +15,13 @@ const HeroBanner = ({ heroBanner }: Props) => {
       <h3>{heroBanner.midText}</h3>
       <h1>{heroBanner.largeText1}</h1>
       <img
-        src={urlFor(heroBanner.image)}
+        src={urlFor(heroBanner.image).toString()}
         alt="headphones"
         className="hero-banner-image"
       />
 
       <div>
-        <Link href="/product/ID">
+        <Link href={`/product/${heroBanner.product}`}>
           <button type="button">{heroBanner.buttonText}</button>
         </Link>
         <div className="desc">
