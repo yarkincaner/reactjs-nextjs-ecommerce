@@ -16,8 +16,14 @@ type Props = {};
 
 const Cart = (props: Props) => {
   const cartRef = useRef() as React.MutableRefObject<HTMLInputElement>;
-  const { totalPrice, totalQuantities, cartItems, setShowCart } =
-    useStateContext();
+  const {
+    totalPrice,
+    totalQuantities,
+    cartItems,
+    setShowCart,
+    toggleCartItemQuantity,
+    onRemove,
+  } = useStateContext();
 
   return (
     <div className="cart-wrapper" ref={cartRef}>
@@ -64,13 +70,23 @@ const Cart = (props: Props) => {
                   <div className="flex bottom">
                     <div>
                       <p className="quantity-desc">
-                        <span className="minus" onClick={() => {}}>
+                        <span
+                          className="minus"
+                          onClick={() =>
+                            toggleCartItemQuantity(item._id, "dec")
+                          }
+                        >
                           <AiOutlineMinus />
                         </span>
                         <span className="num" onClick={() => {}}>
-                          0
+                          {item.quantity}
                         </span>
-                        <span className="plus" onClick={() => {}}>
+                        <span
+                          className="plus"
+                          onClick={() =>
+                            toggleCartItemQuantity(item._id, "inc")
+                          }
+                        >
                           <AiOutlinePlus />
                         </span>
                       </p>
@@ -78,7 +94,7 @@ const Cart = (props: Props) => {
                     <button
                       type="button"
                       className="remove-item"
-                      onClick={() => {}}
+                      onClick={() => onRemove(item)}
                     >
                       <TiDeleteOutline />
                     </button>
