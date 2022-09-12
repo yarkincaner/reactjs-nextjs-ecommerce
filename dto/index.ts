@@ -6,6 +6,7 @@ export interface IProduct {
     current: string;
   };
   price: number;
+  quantity: number;
   details: string;
 }
 
