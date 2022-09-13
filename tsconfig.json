@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "lib/client.js"
-  ],
+, "pages/api/stripe.js"  ],
   "exclude": [
     "node_modules"
   ]

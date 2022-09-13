@@ -27,6 +27,7 @@ const ProductDetails = ({ product, products }: any) => {
           <div className="small-images-container">
             {image?.map((item: any, i: number) => (
               <img
+                key={i}
                 src={urlFor(item).toString()}
                 className={
                   i === index ? "small-image selected-image" : "small-image"
